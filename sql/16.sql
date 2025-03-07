@@ -15,4 +15,5 @@ SELECT RANK() OVER(
 LEFT JOIN inventory USING (film_id)
 LEFT JOIN rental USING (inventory_id)
 LEFT JOIN payment USING (rental_id)
-GROUP BY title ORDER BY COALESCE(SUM(amount), 0.00) DESC;
+GROUP BY title 
+ORDER BY revenue DESC, title ASC;

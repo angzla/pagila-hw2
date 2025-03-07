@@ -6,4 +6,5 @@ FROM film
 LEFT JOIN inventory ON film.film_id = inventory.film_id
 LEFT JOIN rental ON inventory.inventory_id = rental.inventory_id
 LEFT JOIN payment ON rental.rental_id = payment.rental_id
-GROUP BY 1 ORDER BY 2 DESC;
+GROUP BY 1 
+ORDER BY revenue DESC, title ASC;
